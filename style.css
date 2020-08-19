@@ -7,7 +7,14 @@
 :root {
   /* Colores */
   --primario: #db5461;
-  --secundario: #000000;
+  --primario-2: #ff858e;
+  --primario-3: #a41f37;
+  --secundario: #30475f;
+  --secundario-2: #5c728c;
+  --secundario-3: #032035;
+  --terciario: #e3f2fd;
+  --terciario-2: #feffd6;
+  --terciario-3: #cbcca5;
   /* Tipografía */
   --font-family-body: "Pt Sans";
   --font-family-headings: "overpass mono";
