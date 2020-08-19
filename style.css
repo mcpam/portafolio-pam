@@ -41,6 +41,7 @@ h5 {
 
 h1 {
   font-size: 40px;
+  color: var(--secundario-3);
 }
 
 h2 {
@@ -63,7 +64,16 @@ h5 {
 *    Temp
 *****************************************/
 /* TODO: Ejercicio aplicar estilos de figma a cajas */
-
+.banner {
+  display: flex;
+  background-color: #e3f2fd;
+}
+.banner > * {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 20 px;
+}
 /****************************************
 *    Componentes
 *****************************************/
