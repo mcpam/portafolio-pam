@@ -6,11 +6,11 @@
 *****************************************/
 :root {
   /* Colores */
-  --primario: #ffffff;
+  --primario: #db5461;
   --secundario: #000000;
   /* Tipografía */
-  --font-family-body: serif;
-  --font-family-headings: sans-serif;
+  --font-family-body: "Pt Sans";
+  --font-family-headings: "overpass mono";
 }
 
 /****************************************
