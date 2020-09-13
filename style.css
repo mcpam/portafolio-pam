@@ -1,6 +1,5 @@
 /* Tipografía */
 @import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@400;600&family=PT+Sans&display=swap");
-
 /****************************************
 *    Variables
 *****************************************/
@@ -15,38 +14,28 @@
   --terciario: #e3f2fd;
   --terciario-2: #feffd6;
   --terciario-3: #cbcca5;
+  /* Intención de los colores */
+  --color-titulo: var(--terciario-2);
+  --color-ul: var(--primario-2);
+  --color-texto: var(--secundario-3);
   /* Tipografia */
-  --font-family: "mono", serif;
+  --font-family-body: "Pt Sans";
   --font-family-headings: "Overpass Mono", serif;
   --h1: 30px;
   --h2: 27px;
   --h3: 20px;
   --h4: 21px;
   --h5: 19px;
-  /* Intención de los colores */
-  --color-titulo: var(--terciario-2);
-  --color-ul: var(--primario-2);
-  --color-texto: var(--secundario-3);
-  /* Commit: variables colores */
-  --color-titulo: var(--primario-2);
-  --color-ul: var(--terciario-2);
-  --color-texto: var(--terciario);
-  /* Tipografía */
-  --font-family-body: "Pt Sans";
-  --font-family-headings: "overpass mono";
 }
-
 /****************************************
 *    Base
 *****************************************/
 html {
-  height: 100%;
+  height: 100vh;
 }
-
 body {
   font-family: var(--font-family-body);
 }
-
 h1,
 h2,
 h3,
@@ -54,130 +43,102 @@ h4,
 h5 {
   font-family: var(--font-family-headings);
 }
-
 h1 {
   font-size: var(--h1);
   color: var(--secundario-3);
 }
-
 h2 {
   font-size: var(--h2);
 }
-
 h3 {
   font-size: var(--h3);
 }
-
 h4 {
   font-size: var(--h4);
 }
-
 h5 {
   font-size: var(--h5);
 }
-
 a {
-  color: var(--primario-2);
+  color: var(--secundario-3);
   text-decoration: none;
-  transition: color --color-ul;
+  /* La transicion acepta 3 valores: la propiedad de transición, la duración y timing function */
+  /* transition: color --color-ul; -> QUITAR */
+  transition: all 200ms ease-in-out; /* Ejemplo */
 }
-
 a:hover {
-  text-decoration-color: var();
+  /* text-decoration-color: var(); -> QUITAR */
+  color: var(--secundario-2); /* Ejemplo */
+  text-decoration-color: var(--terciario-3); /* Ejemplo */
 }
-
-img {
+/* Explícitamente mostrar el cursor personalizado en la pseudo clase :hover */
+img:hover {
   cursor: url("./assets/imagenes/cursor.svg"), auto;
 }
-
-li {
-  display: inline-block;
-}
-
-li a {
-  text-decoration: none;
-}
-
 /****************************************
 *    Componentes
 *****************************************/
-.contenedor {
-  position: relative;
+/* Contenedor grid */
+.grid-home {
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  /* grid-template: Primer valor definimos las filas (row) / segundo valor las columnas (column) */
+  grid-template: repeat(4, 1fr) / repeat(3, 1fr);
   background-color: var(--terciario);
-  min-height: 100vh;
 }
-
-.titulo {
-  /* Portafolio */
-  grid-column: 1/2;
-  grid-row: 1/2;
-  background: var(--primario-2);
+/* Seleccionamos los primeros 2 elementos para centrarlos en su eje vertical con flex y le ponemos padding-left */
+.grid-home > *:nth-child(-n + 2) {
+  /* https://css-tricks.com/almanac/selectors/n/nth-child */
+  display: flex;
+  align-items: center;
+  padding-left: 5vw;
 }
-
-.titulo__heading {
-  -webkit-text-stroke: 1px var(--terciario-2);
-  color: transparent;
-  width: 582px;
-  height: 72px;
-  font-family: Overpass Mono;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 51.88px;
-  line-height: 79px;
-}
-
+/* Grid items */
 .header {
-  grid-column: 1/2;
-  grid-row: 2/3;
-  background: var(--terciario-);
+  grid-row: 2 / 3;
+  grid-column: 1 / 3;
 }
-
 .header__nombre {
-  font-family: Overpass Mono;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 51.88px;
-  line-height: 79px;
   color: #032035;
-  text-shadow: 0.08em 0em var(--terciario-2);
+  font-size: 51.88px;
+  text-shadow: 0.08em 0 #feffd6;
 }
-
+.titulo {
+  grid-row: 1 / 2;
+  grid-column: 1 / 3;
+  color: transparent;
+  background: var(--terciario);
+  font-size: 30px;
+  -webkit-text-stroke: 1px var(--primario-2);
+}
 .nav {
-  grid-column: 2 / 3;
-  grid-row: 1/ 3;
+  grid-row: 1 / 5;
+  grid-column: 3 / 4;
 }
-
 .menu {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 25px 100px 155px 45px;
+  justify-content: space-around;
+  height: 100%;
+  background-color: var(--primario-2);
+  overflow: scroll; /* showing scrollbars */
+}
+.menu::-webkit-scrollbar-button {
+  display: flex;
+  flex-direction: column;
 }
 
 .menu__item {
-  font-family: PT Sans;
-  font-style: normal;
-  font-weight: bold;
+  padding-left: 2vw;
   font-size: 27px;
-  line-height: 140%;
   text-shadow: 0.1em 0.1em var(--terciario-2);
 }
-
 .contenido {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-row: 3 / 5;
+  grid-column: 1 / 3;
 }
-
-.contenido__imagen:nth-child(1) {
-  grid-row: 1/2;
-  grid-column: 2/3;
+.contenido img:first-of-type {
+  margin: 0 0 0 auto;
 }
-
-.contenido__imagen:nth-child(2) {
-  grid-row: 2/3;
-  grid-column: 1/2;
+.contenido img:last-of-type {
+  margin: 0 auto 0 0;
 }
