@@ -75,6 +75,7 @@ a:hover {
 img:hover {
   cursor: url("./assets/imagenes/cursor.svg"), auto;
 }
+
 /****************************************
 *    Componentes
 *****************************************/
@@ -98,7 +99,7 @@ img:hover {
   grid-column: 1 / 3;
 }
 .header__nombre {
-  color: #032035;
+  color: #ff858e;
   font-size: 51.88px;
   text-shadow: 0.08em 0 #feffd6;
 }
@@ -141,4 +142,8 @@ img:hover {
 }
 .contenido img:last-of-type {
   margin: 0 auto 0 0;
+}
+.Lauracea {
+  flex-box: end;
+  color: #30475f;
 }
