@@ -131,7 +131,6 @@ img:hover {
 .menu__item {
   padding-left: 2vw;
   font-size: 27px;
-  text-shadow: 0.1em 0.1em var(--terciario-2);
 }
 .contenido {
   grid-row: 3 / 5;
