@@ -5,19 +5,15 @@
 *****************************************/
 :root {
   /* Colores */
-  --primario: #db5461;
-  --primario-2: #ff858e;
-  --primario-3: #a41f37;
-  --secundario: #30475f;
-  --secundario-2: #5c728c;
-  --secundario-3: #032035;
-  --terciario: #e3f2fd;
-  --terciario-2: #feffd6;
-  --terciario-3: #cbcca5;
+  --primario: #000000;
+  --primario-2: #3772ff;
+  --primario-3: #df2935;
+  --secundario: #fdca40;
+  --secundario-2: #ffff;
   /* Intención de los colores */
-  --color-titulo: var(--terciario-2);
-  --color-ul: var(--primario-2);
-  --color-texto: var(--secundario-3);
+  --color-titulo: var(--primario-3);
+  --color-ul: var(--primario);
+  --color-texto: var(--secundario-2);
   /* Tipografia */
   --font-family-body: "Pt Sans";
   --font-family-headings: "Overpass Mono", serif;
@@ -45,7 +41,7 @@ h5 {
 }
 h1 {
   font-size: var(--h1);
-  color: var(--secundario-3);
+  color: var(--primario-3);
 }
 h2 {
   font-size: var(--h2);
@@ -60,7 +56,7 @@ h5 {
   font-size: var(--h5);
 }
 a {
-  color: var(--secundario-3);
+  color: var(--secundario-2);
   text-decoration: none;
   /* La transicion acepta 3 valores: la propiedad de transición, la duración y timing function */
   /* transition: color --color-ul; -> QUITAR */
@@ -68,8 +64,8 @@ a {
 }
 a:hover {
   /* text-decoration-color: var(); -> QUITAR */
-  color: var(--secundario-2); /* Ejemplo */
-  text-decoration-color: var(--terciario-3); /* Ejemplo */
+  color: var(--primario-2); /* Ejemplo */
+  text-decoration-color: var(--secundario-2); /* Ejemplo */
 }
 /* Explícitamente mostrar el cursor personalizado en la pseudo clase :hover */
 img:hover {
@@ -84,7 +80,7 @@ img:hover {
   display: grid;
   /* grid-template: Primer valor definimos las filas (row) / segundo valor las columnas (column) */
   grid-template: repeat(4, 1fr) / repeat(3, 1fr);
-  background-color: var(--terciario);
+  background-color: var(--secundario-2);
 }
 /* Seleccionamos los primeros 2 elementos para centrarlos en su eje vertical con flex y le ponemos padding-left */
 .grid-home > *:nth-child(-n + 2) {
@@ -99,15 +95,15 @@ img:hover {
   grid-column: 1 / 3;
 }
 .header__nombre {
-  color: #ff858e;
+  color: #3772ff;
+  text-decoration-color: var(--primario-3);
   font-size: 51.88px;
-  text-shadow: 0.08em 0 #feffd6;
 }
 .titulo {
   grid-row: 1 / 2;
   grid-column: 1 / 3;
   color: transparent;
-  background: var(--terciario);
+  background: var(--secundario-2);
   font-size: 30px;
   -webkit-text-stroke: 1px var(--primario-2);
 }
@@ -120,7 +116,7 @@ img:hover {
   flex-direction: column;
   justify-content: space-around;
   height: 100%;
-  background-color: var(--primario-2);
+  background-color: var(--primario);
   overflow: scroll; /* showing scrollbars */
 }
 .menu::-webkit-scrollbar-button {
@@ -144,8 +140,7 @@ img:hover {
 }
 .foto {
   flex-box: end;
-  color: #30475f;
-}
+  color: #fdca40
 
 /* Proyectos */
 
