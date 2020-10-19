@@ -75,77 +75,60 @@ img:hover {
 /****************************************
 *    Componentes
 *****************************************/
-/* Contenedor grid */
-.grid-home {
-  display: grid;
-  /* grid-template: Primer valor definimos las filas (row) / segundo valor las columnas (column) */
-  grid-template: repeat(4, 1fr) / repeat(3, 1fr);
-  background-color: var(--secundario-2);
+.layout{
+display: flex;
+flex-direction: column;
 }
-/* Seleccionamos los primeros 2 elementos para centrarlos en su eje vertical con flex y le ponemos padding-left */
-.grid-home > *:nth-child(-n + 2) {
-  /* https://css-tricks.com/almanac/selectors/n/nth-child */
+.header{
+  background-color: #000000;
   display: flex;
+  justify-content: space-between;
+  padding: 2rem;
   align-items: center;
-  padding-left: 5vw;
 }
-/* Grid items */
-.header {
-  grid-row: 2 / 3;
-  grid-column: 1 / 3;
+.nombre{
+  color: #ffff;
 }
-.header__nombre {
-  color: #3772ff;
-  text-decoration-color: var(--primario-3);
-  font-size: 51.88px;
+.nav{
+ 
 }
-.titulo {
-  grid-row: 1 / 2;
-  grid-column: 1 / 3;
-  color: transparent;
-  background: var(--secundario-2);
-  font-size: 30px;
-  -webkit-text-stroke: 1px var(--primario-2);
-}
-.nav {
-  grid-row: 1 / 5;
-  grid-column: 3 / 4;
-}
-.menu {
+.menu{
   display: flex;
-  flex-direction: column;
+
+}
+.menu__item{
+  padding-right: 1.5rem;
+}
+.proyectos{
+  background-color:white;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  height: 100%;
-  background-color: var(--primario);
-  overflow: scroll; /* showing scrollbars */
 }
-.menu::-webkit-scrollbar-button {
-  display: flex;
-  flex-direction: column;
+.proyecto{
+  border: 1px solid blue;
+  position: relative;
+  min-height: 305px;
 }
+.proyecto__titulo{
+font-style: normal;
+font-size: 32px;
+line-height: 49px;
+color: #3772FF;
+}
+.proyecto__fecha{
+font-size: 20px;
+line-height: 160%;
+color: #000000;
+transform: rotate(-90deg);
+position: absolute;
+bottom: 10px;
+left: -50px;
 
-.menu__item {
-  padding-left: 2vw;
-  font-size: 27px;
 }
-.contenido {
-  grid-row: 3 / 5;
-  grid-column: 1 / 3;
-}
-.contenido img:first-of-type {
-  margin: 0 0 0 auto;
-}
-.contenido img:last-of-type {
-  margin: 0 auto 0 0;
-}
-.foto {
-  flex-box: end;
-  color: #fdca40
+.proyecto__imagen{
 
-/* Proyectos */
-
-.proyectos {
-  display: grid;
-  grid-template: repeat(4, 1fr) / repeat(3, 1fr);
-  background-color: var(--terciario);
+}
+.proyecto__imagen:hover {
+border-bottom:40px solid #fdca40;
 }
